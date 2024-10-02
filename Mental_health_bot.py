@@ -63,15 +63,12 @@ if st.button("Get Mental Health Tips"):
     st.markdown(f"<div style='text-align: left; color: #000000;'>**Mental Health Tips:** {tips_response.text}</div>", unsafe_allow_html=True)
 
 # Clear conversation history button
+# Clear conversation history button
 if st.button("Clear Memories"):
     # Clear the conversation history from the session state
     st.session_state.conversation_history = []
-    # Refresh the app (optional)
-    # st.experimental_rerun()  # This might be unreliable, consider alternative
-
-    # Alternative: Manually trigger a re-render without relying on experimental rerun
-    st.write("")  # Add an empty space to force a re-render
-    st.experimental_rerender()  # This is a more reliable way to refresh
+    # Refresh the app using st.experimental_rerun_with_rerun_reason
+    st.experimental_rerun_with_rerun_reason("Conversation cleared")
 
 # Additional features
 if st.button("Track Your Mood"):
