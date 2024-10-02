@@ -67,8 +67,9 @@ if st.button("Get Mental Health Tips"):
 if st.button("Clear Memories"):
     # Clear the conversation history from the session state
     st.session_state.conversation_history = []
-    # Refresh the app using st.experimental_rerun_with_rerun_reason
-    st.experimental_rerun_with_rerun_reason("Conversation cleared")
+
+    # Manually trigger a re-render
+    st.write("")  # Add an empty space to force a re-render
 
 # Additional features
 if st.button("Track Your Mood"):
