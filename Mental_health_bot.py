@@ -2,11 +2,12 @@ import google.generativeai as genai
 import streamlit as st
 
 # Set up the title and description of the app
-st.title('AI-Powered Mental Health Support Chatbot')
+st.title('Vamshi : AI-Powered Mental Health Support Chatbot')
 st.write('Ask me about mental health and emotional support!')
 
+
+api_key=st.secrets["gemini_api_key"]
 # Configure Gemini API
-api_key = ""  # Gemini API key
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
